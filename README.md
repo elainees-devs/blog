@@ -1,37 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 DevLog – A Software Development Blog (Next.js + MongoDB)
 
-## Getting Started
+A modern blog application tailored for software development content. Built with **Next.js** for performance and SEO, and **MongoDB** for flexible content storage. Ideal for developers sharing tutorials, articles, and engineering insights.
 
-First, run the development server:
+---
+
+## 🎯 Objectives
+
+- Share developer insights, guides, and tutorials in a clean, structured format.
+- Provide an intuitive interface for writing and managing blog posts.
+- Deliver high performance, SEO-optimized pages with scalable backend logic.
+- Embrace full-stack development best practices with modern tools.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend:
+- **Next.js 14** – Full-stack React framework
+- **TypeScript** – Type safety and clean architecture
+- **Tailwind CSS** – Rapid UI development
+- **Markdown / MDX** – Rich content formatting
+
+### Backend:
+- **Next.js API Routes** – Built-in backend support
+- **Mongoose** – MongoDB ODM for schema modeling
+- **JWT** – Authentication & session management
+
+### Database:
+- **MongoDB Atlas** – Cloud-hosted NoSQL database
+
+---
+
+## 🗂 Database Design
+
+**Users Collection**
+| Field      | Type     | Description                |
+|------------|----------|----------------------------|
+| _id        | ObjectId | Primary key                |
+| name       | String   | Author's full name         |
+| email      | String   | Unique user email          |
+| password   | String   | Hashed password            |
+| role       | String   | 'admin' or 'user'          |
+| createdAt  | Date     | Registration timestamp     |
+
+**Posts Collection**
+| Field      | Type     | Description                |
+|------------|----------|----------------------------|
+| _id        | ObjectId | Primary key                |
+| title      | String   | Title of the blog post     |
+| slug       | String   | URL-friendly identifier    |
+| content    | String   | Markdown-formatted content |
+| authorId   | ObjectId | Ref → Users._id            |
+| tags       | [String] | Technology tags (e.g. JS)  |
+| published  | Boolean  | Visibility flag            |
+| createdAt  | Date     | Created timestamp          |
+| updatedAt  | Date     | Last modified              |
+
+---
+
+✨ Features
+🔐 Authentication – Signup, login, JWT tokens
+
+✍️ Markdown Support – Developer-friendly writing experience
+
+🧑‍💻 Author Dashboard – Create, edit, delete posts
+
+🌍 Public Blog Feed – View published articles
+
+🧭 Dynamic Routing – Slug-based post URLs
+
+🔍 SEO Ready – Meta tags, Open Graph, sitemap
+
+📱 Responsive UI – Mobile-first design
+
+🏷 Tags & Filtering – Find posts by tech stack
+
+---
+
+## ✅ Testing
+
+- **Jest** – Unit and integration testing
+- **React Testing Library** – UI interaction testing
+- **Supertest** – API testing
+- **MongoMemoryServer** – In-memory MongoDB for isolated tests
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+npm run test
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Recommended: **Vercel + MongoDB Atlas**
 
-## Learn More
+### Vercel Deployment Steps
+1. Push your code to GitHub
+2. Go to [https://vercel.com](https://vercel.com)
+3. Import your repo
+4. Add these environment variables:
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📌 Future Enhancements
+🔁 Social login (GitHub, Google)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📊 Post analytics (views, likes)
 
-## Deploy on Vercel
+💬 Comments with moderation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧑‍🤝‍🧑 Multi-author support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# blog
+🌙 Dark mode
+
+---
+
+🧑 Author
+Built with ❤️ by Elaine
+
+
+
