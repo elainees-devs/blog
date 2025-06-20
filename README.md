@@ -16,7 +16,7 @@ A modern blog application tailored for software development content. Built with 
 ## 🛠 Tech Stack
 
 ### Frontend:
-- **Next.js 14** – Full-stack React framework
+- **Next.js 15** – Full-stack React framework
 - **TypeScript** – Type safety and clean architecture
 - **Tailwind CSS** – Rapid UI development
 - **Markdown / MDX** – Rich content formatting
